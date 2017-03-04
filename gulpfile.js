@@ -111,7 +111,7 @@ gulp.task('html', function() {
     })
     .pipe(
       gulpsmith() 
-      .metadata({site_name: "TSMSB.website"})
+      .metadata({site_name: "KennethStarterKit"})
       .use(collections({
           blog: {
             sortBy: 'date',
