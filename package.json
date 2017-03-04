@@ -1,12 +1,13 @@
 {
-  "name": "kennethstarterkit",
+  "name": "tsmsb.website",
   "version": "2.0.0",
-  "description": "Lightweight Sass + Gulp Boilerplate",
+  "description": "Website for tsmsb",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.11.2",
+    "critical": "^0.7.2",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.4",
@@ -18,6 +19,7 @@
     "gulp-imagemin": "^2.4.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.0",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.6",
     "gulp-sourcemaps": "^1.6.0",
@@ -30,9 +32,12 @@
     "lodash.assign": "^4.0.8",
     "lost": "^6.7.2",
     "metalsmith": "^2.1.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-in-place": "^1.4.4",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown-remarkable": "^0.1.1",
     "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-register-helpers": "^0.1.2",
     "run-sequence": "^1.1.5"
   },
   "scripts": {
@@ -40,12 +45,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennethwang14/KennethStarterKit.git"
+    "url": "git+https://github.com/kennethwang14/TSMSB.git"
   },
   "author": "Kenneth Wang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kennethwang14/KennethStarterKit/issues"
+    "url": "https://github.com/kennethwang14/TSMSB/issues"
   },
-  "homepage": "https://github.com/kennethwang14/KennethStarterKit#readme"
+  "homepage": "https://github.com/kennethwang14/TSMSB#readme"
 }
