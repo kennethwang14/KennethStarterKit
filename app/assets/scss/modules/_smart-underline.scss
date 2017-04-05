@@ -22,26 +22,16 @@
                 -.18em 0 $background;
 }
 
-@mixin text-underline($color, $percent: 93%) {
+@mixin text-underline($color, $percent: 93%, $size: 1px) {
   background-image: linear-gradient($color, $color);
-  background-size: 1px 1px;
+  background-size: 1px $size;
   background-repeat: repeat-x;
   background-position: 0% $percent;
 }
 
-@mixin text-underline-hover($color, $percent: 93%) {
-  &:hover, &:active, &:focus {
-    background-image: linear-gradient($color, $color);
-    background-size: 1px 1px;
-    background-repeat: repeat-x;
-    background-position: 0% $percent;
-  }
-}
-
-
-@mixin link-underline($background, $color, $percent: 93%) {
+@mixin link-underline($background, $color, $percent: 93%, $size: 1px) {
   @include text-underline-crop($background);
-  @include text-underline($color, $percent);
+  @include text-underline($color, $percent, $size);
 
   text-decoration: none;
 
@@ -52,23 +42,4 @@
   &:before {
     text-shadow: none;
   }
-}
-
-@mixin link-underline-hover($background, $color, $percent: 93%) {
-  @include text-underline-crop($background);
-  @include text-underline($color, $percent);
-
-  text-decoration: none;
-
-  *,
-  *:after,
-  &:after,
-  *:before,
-  &:before {
-    text-shadow: none;
-  }
-}
-
-a {
-  @include link-underline(white, color($theme-color));
 }

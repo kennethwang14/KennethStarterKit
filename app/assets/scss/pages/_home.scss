@@ -2,13 +2,71 @@
   @include container;
   
   .title {
-    @include margin-bottom(0.25);
+    @include size(h1);
+    font-weight: 600;
+    text-transform: uppercase;
     text-align: center;
   }
 
   .author {
-    @include size(h4);
+    @include size(h3);
+    @include margin-bottom(1.5);
+    font-weight: 300;
     text-align: center;
-    font-style: italic;
+  }
+  
+  .fancy-hr {
+    @include margin-bottom(1.5);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    border: none;
+    border-top: medium double color($grey, 500);
+    color: #333;
+    text-align: center;
+    
+    &:after {
+      content: "§";
+      color: color($grey, 600);
+      display: inline-block;
+      position: relative;
+      top: -0.89em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+    }
+  }
+
+  p {
+    @include size(p);
+    @include margin-bottom(1);
+    text-indent: 2rem;
+  }
+    
+  .end {
+    @include size(h2);
+    @include margin-top(3);
+    @include margin-bottom(3);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    
+    position: relative;
+    z-index: 1;
+    &:before {
+        border-top: 2px solid color($grey, 500);
+        content:"";
+        margin: 0 auto; /* this centers the line to the full width specified */
+        position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 95%;
+        z-index: -1;
+    }
+    
+    .background {
+      background: #fff; 
+      padding: 0 15px; 
+    }
   }
 }

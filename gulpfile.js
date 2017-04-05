@@ -2,16 +2,14 @@ var gulp = require('gulp'),
 
     /* Appending header */
     header  = require('gulp-header'),
-    package = require('./package.json'),
+    packageObject = require('./package.json'),
 
     /* CSS */
     sass = require('gulp-sass'),
     sassGlob = require('gulp-sass-glob'),
     sourcemaps  = require('gulp-sourcemaps'),
-    autoprefixer = require('autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    postcss = require('gulp-postcss'),
-    lost = require('lost'),
+    autoprefixer = require('gulp-autoprefixer'),
 
     /* JavaScript */
     uglify = require('gulp-uglify'),
@@ -28,7 +26,6 @@ var gulp = require('gulp'),
     template = require('metalsmith-in-place'),
     helpers = require('metalsmith-register-helpers'),
     permalinks = require('metalsmith-permalinks'),
-    markdown = require('metalsmith-markdown-remarkable'),
     collections = require('metalsmith-collections'),
     gulp_front_matter = require('gulp-front-matter'),
     assign = require('lodash.assign'),
@@ -44,7 +41,6 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     del = require('del');
 
-    
 
 //Banner header
 var banner = [
@@ -63,67 +59,41 @@ var bannerHTML = [
   '\n\n'
 ].join('');
 
-//
 gulp.task('css', function () {
   gulp.src('app/assets/scss/**/*.scss')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([
-      lost(),
-      autoprefixer()
-    ]))
-    .pipe(cssnano())
+    .pipe(cssnano({discardComments: {removeAll: true}}))
+    .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(header(banner, { package : package }))
-    .pipe(gulp.dest('dist/assets/css'));
-});
-
-gulp.task('css-build', function () {
-  gulp.src('app/assets/scss/**/*.scss')
-    .pipe(plumber())
-    .pipe(sassGlob())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([
-      lost(),
-      autoprefixer()
-    ]))
-    .pipe(cssnano())
-    .pipe(header(banner, { package : package }))
+    .pipe(header(banner, { package : packageObject }))
     .pipe(gulp.dest('dist/assets/css'));
 });
 
 gulp.task('js',function(){
   gulp.src(['app/assets/js/**/*.js', '!app/assets/js/polyfill/**/*.js'])
     .pipe(plumber())
-    .pipe(concat('merged.js'))
+    .pipe(concat('bundle.js'))
     .pipe(uglify())
-    .pipe(header(banner, { package : package }))
+    .pipe(header(banner, { package : packageObject }))
     .pipe(gulp.dest('dist/assets/js'));
 });
 
 gulp.task('html', function() {
-   gulp.src(['app/pages/**/*.html', 'app/pages/**/*.md', 'app/*.html', '!app/templates', '!app/templates/**/*', '!app/**/README.md'])
+   gulp.src(['app/pages/**/*.html', 'app/*.html', '!app/templates', '!app/templates/**/*', '!app/**/README.md'])
    .pipe(gulp_front_matter()).on("data", function(file) {
       assign(file, file.frontMatter); 
       delete file.frontMatter;
     })
     .pipe(
       gulpsmith() 
-      .metadata({site_name: "KennethStarterKit"})
       .use(collections({
           blog: {
             sortBy: 'date',
             reverse: true
-          },
-          players: {
-            sortBy: 'date',
-            reverse: true
           }
-      }))
-      .use(markdown({
-        html: true
       }))
       .use(permalinks({
         pattern: ':root/:title'
@@ -150,7 +120,7 @@ gulp.task('html', function() {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     }))
-    .pipe(header(bannerHTML, { package : package }))
+    .pipe(header(bannerHTML, { package : packageObject }))
     .pipe(gulp.dest('dist'));
 });
 
@@ -175,15 +145,12 @@ gulp.task('clean', function() {
     return del.sync('dist');
 });
 
-
 gulp.task('copy', function() {
-   gulp.src(['app/*.*', 'app/.htaccess', '!app/*.md', '!app/*.html'])
+   gulp.src(['app/*.*', 'app/.htaccess', '!app/*.html'])
     .pipe(gulp.dest('dist'));
   gulp.src(['app/assets/fonts/**'])
     .pipe(gulp.dest('dist/assets/fonts'));
 });
-
-
 
 gulp.task('browser-sync', function() {
     browserSync.init(null, {
@@ -203,7 +170,7 @@ gulp.task('watch', function() {
       browserSync.reload();
     });
 
-    gulp.watch("app/**/*.+(html|md)", ['html']).on('change', function(evt) {
+    gulp.watch("app/**/*.html", ['html']).on('change', function(evt) {
       browserSync.reload();
     });
 
@@ -222,7 +189,7 @@ gulp.task('default', function (callback) {
 
 gulp.task('build', function (callback) {
   runSequence('clean', 'copy', 'html',
-    ['imagemin', 'css-build', 'js'],
+    ['imagemin', 'css', 'js'],
     'critical',
     callback
   )

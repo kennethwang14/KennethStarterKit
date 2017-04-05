@@ -1,27 +1,31 @@
-/* http://adamschwartz.co/magic-of-css/potions/buttons/ */
-
-@mixin button-lite($color: #e0e0e0, $padding: 0.4em) {
-  outline: none;
-  margin: 0;
-  background: $color;
-  border: 1px solid rgba(0, 0, 0, .15);
-  border-bottom: 1px solid rgba(0, 0, 0, .3);
-  cursor: pointer;
-  padding: $padding ($padding * 2);
-  text-rendering: optimizeLegibility;
-  font-size: inherit;
-  font-family: inherit;
-  font-weight: 300;
-  color: inherit;
-  display: inline-block;
-    
+@mixin button-bg($bg, $width: 15rem) {
+  background: $bg;
+  padding: 1rem 0;
+  max-width: $width;
+  width: 100%;
+  border: none;
+  
   &:hover {
-    background: lighten($color, 3%);
+    background:darken($bg, 8%);
+    transition: all 0.3s ease;
   }
-
   &:active {
-    background: $color;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-top: 1px solid rgba(0, 0, 0, .3);  
+    background:darken($bg, 25%);
+  } 
+}
+
+@mixin button-lite($bg, $width: 15rem) {
+  background: transparent;
+  padding: 0.82rem 0;
+  max-width: $width;
+  width: 100%;
+  border: 0.2rem solid $bg;
+  
+  &:hover {
+    border: 3px solid darken($bg, 8%);
+    transition: all 0.3s ease;
   }
+  &:active {
+     border: 3px solid darken($bg, 25%);
+  } 
 }

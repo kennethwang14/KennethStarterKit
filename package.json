@@ -1,7 +1,7 @@
 {
-  "name": "tsmsb.website",
+  "name": "KennethStarterKit",
   "version": "2.0.0",
-  "description": "Website for tsmsb",
+  "description": "Personal boilerplate for frontend development.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -10,6 +10,7 @@
     "critical": "^0.7.2",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-cache": "^0.4.4",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.1",
@@ -18,7 +19,6 @@
     "gulp-htmlmin": "^1.3.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.1.0",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.6",
@@ -30,7 +30,6 @@
     "imagemin-jpegoptim": "^4.1.0",
     "imagemin-pngquant": "^4.2.2",
     "lodash.assign": "^4.0.8",
-    "lost": "^6.7.2",
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-in-place": "^1.4.4",
@@ -40,17 +39,9 @@
     "metalsmith-register-helpers": "^0.1.2",
     "run-sequence": "^1.1.5"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kennethwang14/TSMSB.git"
+    "url": "https://github.com/kennethwang14/KennethStarterKit"
   },
   "author": "Kenneth Wang",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kennethwang14/TSMSB/issues"
-  },
-  "homepage": "https://github.com/kennethwang14/TSMSB#readme"
+  "license": "MIT"
 }

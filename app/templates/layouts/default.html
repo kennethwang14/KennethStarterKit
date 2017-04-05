@@ -1,11 +1,15 @@
 <!doctype html>
+<!--#if expr="$HTTP_COOKIE=/fonts-loaded=true/" -->
+<html lang="en" class="fonts-loaded">
+<!--#else -->
 <html lang="en">
+<!--#endif -->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <meta name="description" content="{{this.description}}">
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--[if lt IE 9]>

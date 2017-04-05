@@ -4,8 +4,21 @@
   height: 5rem;
   position: relative;
   
-    p {
+    .links {
       @include center;
-      color: white;
+      color: color($theme-color, 100);
+      @include size(h6);
     }
+    
+      a {
+          @include link-underline(color($theme-color, 900), color($theme-color, 400))
+          &:hover {
+            color: color($theme-color, 300);
+            transition: all 0.3s ease;
+         }
+      }
+      
+      .pipe {
+        padding: 0 1rem;
+      }
 }

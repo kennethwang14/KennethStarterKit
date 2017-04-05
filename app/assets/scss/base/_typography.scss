@@ -3,71 +3,169 @@
 // -----------------------------------------------------------------------------
 
 $line-height: 1.4;
-$heading-font: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
-$body-font: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
+$heading-font: 'Roboto', Helvetica, Arial, sans-serif;
+$body-font: 'Roboto', Helvetica, Arial, sans-serif;
+
+html, body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  height: 100%; 
+}
 
 html {
   font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@mixin heading-font {
+  font-family: Arial, sans-serif;
+  .fonts-loaded & {
+    font-family: $heading-font;
+  }
+}
+
+@mixin body-font {
+  font-family: Arial, sans-serif;
+  .fonts-loaded & {
+    font-family: $body-font;
+  }  
 }
 
 body {
+  @include body-font;
   line-height: $line-height;
-  font-family: $body-font;
   color: $body-color;
+}
+
+
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-Thin.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-Thin.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-Thin.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-Thin.svg#Roboto-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-Medium.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-Medium.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-Medium.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-Medium.svg#Roboto-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-Regular.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-Regular.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-Regular.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-Regular.svg#Roboto-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.svg#Roboto-MediumItalic') format('svg');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.svg#Roboto-ThinItalic') format('svg');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot');
+  src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/hinted-subset-Roboto-Italic.woff2') format('woff2'),
+    url('/assets/fonts/hinted-subset-Roboto-Italic.woff') format('woff'),
+    url('/assets/fonts/hinted-subset-Roboto-Italic.ttf') format('truetype'),
+    url('/assets/fonts/hinted-subset-Roboto-Italic.svg#Roboto-Italic') format('svg');
+  font-weight: normal;
+  font-style: italic;
 }
 
 /* 
  * Modular scale
- * http://www.modularscale.com/?1.25&em&1.33&web&text
+ * http://www.modularscale.com/?1.25&em&1.2
 */
-
 $type-scale: (
-  hero: 6rem, // deviates from modular scale
-  sub-hero: 5.202rem,
-  h1: 3.911rem,
-  h2: 2.941rem,
-  h3: 2.211rem,
-  h4: 1.663rem,
+  h1: 3.732rem,
+  h2: 3.11rem,
+  h3: 2.592rem,
+  h4: 2.16rem,
+  h5: 1.8rem,
+  h6: 1.5rem,
   p: 1.25rem,
-  small: 1rem // deviates from modular scale
+  small: 1.042rem
 );
 
 /* 
  * Modular scale
- * http://www.modularscale.com/?1.25&em&1.25&web&text
+ * http://www.modularscale.com/?1.15&em&1.19
 */
-
 $type-scale-tablet: (
-  hero: 4.768rem,
-  sub-hero: 3.815rem,
-  h1: 3.052rem,
-  h2: 2.441rem,
-  h3: 1.953em,
-  h4: 1.563rem,
-  p: 1.25rem, 
+  h1: 3.266rem,
+  h2: 2.744rem,
+  h3: 2.306rem,
+  h4: 1.938rem,
+  h5: 1.626rem,
+  h6: 1.368rem,
+  p: 1.15rem,
   small: 1rem
 );
-
 
 /* 
  * Modular scale
  * http://www.modularscale.com/?1.1&em&1.25&web&text
 */
-
 $type-scale-mobile: (
-  hero: 4.196rem,
-  sub-hero: 3.357rem,
-  h1: 2.686rem,
-  h2: 2.148rem,
-  h3: 1.719rem,
-  h4: 1.375rem,
-  p: 1.1rem,
-  small: 0.94rem // deviates from modular scale
+  h1: 2.475rem,
+  h2: 2.152rem,
+  h3: 1.871rem,
+  h4: 1.627rem,
+  h5: 1.415rem,
+  h6: 1.231rem,
+  p: 1.07rem,
+  small: 0.95rem
 );
 
 
-$breakpoint-tablet: 75em;
-$breakpoint-mobile: 45em;
+$breakpoint-tablet: 65em;
+$breakpoint-mobile: 35em;
+$whitespace: $line-height * map-get($type-scale, p);
 
 @mixin size($level) {
   font-size: map-get($type-scale, $level);
@@ -78,8 +176,6 @@ $breakpoint-mobile: 45em;
      font-size: map-get($type-scale-mobile, $level);
   }
 }
-
-$whitespace: $line-height * map-get($type-scale, p);
 
 @mixin margin-bottom($level) {
   margin-bottom: $line-height * map-get($type-scale, p) * $level;
@@ -101,25 +197,24 @@ $whitespace: $line-height * map-get($type-scale, p);
   }
 }
 
-h1 {@include size(h1);}
-h2 {@include size(h2);}
-h3 {@include size(h3);}
-h4 {@include size(h4);}
-p {@include size(p);}
-li {@include size(p);}
-small {@include size(small);}
+@mixin padding-bottom($level) {
+  padding-bottom: $line-height * map-get($type-scale, p) * $level;
+  @media (max-width: $breakpoint-tablet) {
+     padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+  }
+  @media (max-width: $breakpoint-mobile) {
+     padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+  }
+}
 
-h1 {font-family: $heading-font}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-small {
-  @include margin-bottom(1);
+@mixin padding-top($level) {
+  padding-top: $line-height * map-get($type-scale, p) * $level;
+  @media (max-width: $breakpoint-tablet) {
+     padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
+  }
+  @media (max-width: $breakpoint-mobile) {
+     padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
+  }
 }
 
 ol,
@@ -127,33 +222,14 @@ ul {
   padding-left: 1.4rem;
 }
 
-blockquote {
-  @include margin-bottom(1);
-  @include size(p);
-  padding: 1rem 0 1rem 1.6rem;
-  border-left: 0.5rem solid color($theme-color);
-  margin-top: $whitespace;
-}
-
-cite {
-  &:before {
-    content: '\2014 ';
-  }
-  color: color($grey, 400);
-  display: block;
-}
-
-
-@mixin container($width: 48rem) {
+@mixin container($width: 48rem, $padding: 0.25rem) {
   margin: auto;
-  @include margin-top(1);
-  @include margin-bottom(1);
   max-width: $width;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: $padding;
+  padding-right: $padding;
 }
 
 a {
-  color: color($theme-color);
-  /* Additional Styling in modules/_smart-underline.scss */
+  text-decoration: none;
+  color: inherit;
 }
