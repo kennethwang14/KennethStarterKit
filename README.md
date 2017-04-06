@@ -1,4 +1,4 @@
-### kenneth-starter-kit
+# kenneth-starter-kit
 
 A Gulp-powered starter kit that I use for my frontend web projects. It contains everything you need for a HTML/CSS/JS multi-page website. For SPAs or JavaScript-based web apps, I would recommend [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit) instead.
 
@@ -20,11 +20,11 @@ gulp build #production
 
 - This project started as a fork of Cory Simmons' [Boy](https://github.com/corysimmons/boy) and contains its many features.
   - A lightweight/2-space batch of [HTML5 Boilerplate](https://html5boilerplate.com) features
-    - [index.html](index.html) (with all the fluff removed)
+    - [index.html](app/index.html) (with all the fluff removed)
     - [.editorconfig](.editorconfig)
-    - [.htaccess](.htaccess)
-    - [crossdomain.xml](crossdomain.xml)
-  - Minified and sourcemapped :rage3: [reeeset](https://github.com/corysimmons/reeeset) (opinionated [Normalize.css](https://necolas.github.io/normalize.css) for the real world)
+    - [.htaccess](app/.htaccess)
+    - [crossdomain.xml](app/crossdomain.xml)
+  - Minified :rage3: [reeeset](https://github.com/corysimmons/reeeset) (opinionated [Normalize.css](https://necolas.github.io/normalize.css) for the real world)
   - Polyfills for IE8 and below a la :heart: [ie-love](https://github.com/corysimmons/ie-love)
     - Conditionally loaded so only IE8 and below users will have to download it (even though it's only 25kb uglified)
     - [html5shiv](https://github.com/aFarkas/html5shiv) (in the right place)
