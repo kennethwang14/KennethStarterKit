@@ -18,9 +18,9 @@ gulp build #production
 
 ## Features
 
-- This project started as a fork of Cory Simmons' [Boy](https://github.com/corysimmons/boy) and contains its many features.
+- This project started as a fork of Cory Simmons' [Boy](https://github.com/corysimmons/boy) and contains its features. Note that various modifications have been made to tailor it to this starter kit
   - A lightweight/2-space batch of [HTML5 Boilerplate](https://html5boilerplate.com) features
-    - [index.html](app/index.html) (with all the fluff removed)
+    - [default.html](app/templates/layout/default.html) (HTML index layout with all the fluff removed)
     - [.editorconfig](.editorconfig)
     - [.htaccess](app/.htaccess)
     - [crossdomain.xml](app/crossdomain.xml)
