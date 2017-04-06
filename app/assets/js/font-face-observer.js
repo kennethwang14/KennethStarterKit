@@ -23,10 +23,9 @@ function createCookie(name,value,days) {
     document.cookie = name+"="+value+expires+"; path=/";
 }
 
-var fontA = new FontFaceObserver('nimbus-sans-condensed');
-var fontB = new FontFaceObserver('proxima-nova');
+var fontA = new FontFaceObserver('Roboto');
 
-Promise.all([fontA.load(), fontB.load()]).then(function () {
+Promise.all([fontA.load()]).then(function () {
     document.documentElement.className += "fonts-loaded";
     createCookie("fonts-loaded", true, 365);
 });
