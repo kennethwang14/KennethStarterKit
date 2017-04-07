@@ -1,31 +1,33 @@
 @mixin button-bg($bg, $width: 15rem) {
-  background: $bg;
-  padding: 1rem 0;
-  max-width: $width;
-  width: 100%;
-  border: none;
-  
-  &:hover {
-    background:darken($bg, 8%);
-    transition: all 0.3s ease;
-  }
-  &:active {
-    background:darken($bg, 25%);
-  } 
+    background: $bg;
+    padding: 1rem 0;
+    max-width: $width;
+    width: 100%;
+    border: 0;
+
+    &:hover {
+        background: darken($bg, 8%);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        background: darken($bg, 25%);
+    }
 }
 
 @mixin button-lite($bg, $width: 15rem) {
-  background: transparent;
-  padding: 0.82rem 0;
-  max-width: $width;
-  width: 100%;
-  border: 0.2rem solid $bg;
-  
-  &:hover {
-    border: 3px solid darken($bg, 8%);
-    transition: all 0.3s ease;
-  }
-  &:active {
-     border: 3px solid darken($bg, 25%);
-  } 
+    background: transparent;
+    padding: 0.82rem 0;
+    max-width: $width;
+    width: 100%;
+    border: 0.2rem solid $bg;
+
+    &:hover {
+        border: 3px solid darken($bg, 8%);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        border: 3px solid darken($bg, 25%);
+    }
 }

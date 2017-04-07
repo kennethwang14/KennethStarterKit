@@ -1,0 +1,11 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+        "selector-class-pattern": null,
+        "indentation": 4,
+        "max-nesting-depth": 2,
+        "order/declaration-block-properties-alphabetical-order": null,
+        "scss/at-import-partial-extension-blacklist": null,
+        "selector-no-qualifying-type": [true, ignore: "attribute"],
+    }
+}

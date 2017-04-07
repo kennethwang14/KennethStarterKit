@@ -1,24 +1,25 @@
 .global__footer {
-  @include margin-top(3);
-  background-color: color($theme-color, 900);
-  height: 5rem;
-  position: relative;
-  
+    @include margin-top(3);
+    background-color: color($theme-color, 900);
+    height: 5rem;
+    position: relative;
+
     .links {
-      @include center;
-      color: color($theme-color, 100);
-      @include size(h6);
+        @include center;
+        color: color($theme-color, 100);
+        @include size(h6);
     }
-    
-      a {
-          @include link-underline(color($theme-color, 900), color($theme-color, 400))
-          &:hover {
+
+    a {
+        @include link-underline(color($theme-color, 900), color($theme-color, 400));
+
+        &:hover {
             color: color($theme-color, 300);
             transition: all 0.3s ease;
-         }
-      }
-      
-      .pipe {
+        }
+    }
+
+    .pipe {
         padding: 0 1rem;
-      }
+    }
 }

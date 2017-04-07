@@ -47,11 +47,14 @@ gulp build #production
   - Minification using [cssnano](http://cssnano.co/)
   - Outputs into a single .css file to minimize number of requests
   - SourceMap support
+  - Includes `.stylelintrc` configuration file for [StyleLint](https://github.com/stylelint/stylelint). Gulp does not automatically lint; editor plugin is recommended instead.
 - JS
   - Minification using [UglifyJS](https://github.com/mishoo/UglifyJS)
   - Concatenates into a single .js file to minimize number of requests
+  - Converts from ES6 to ES5 using [Babel](https://babeljs.io/)
   - Comes with FontFaceObserver for a basic font loading strategy
   - SourceMap support
+  - Includes `.eslintrc` configuration file for [ESLint](http://eslint.org/). Gulp does not automatically lint; editor plugin is recommended instead.
 - HTML
   - HTML templating using MetalSmith. MetalSmith can be used in conjunction with any templating engine supported by [consolidate.js](https://github.com/tj/consolidate.js/). Currently set to [Handlebars](http://handlebarsjs.com/).
   - Layouts and partials

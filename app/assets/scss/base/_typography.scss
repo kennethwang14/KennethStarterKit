@@ -1,120 +1,98 @@
 // -----------------------------------------------------------------------------
 // This file contains everything related to typography.
 // -----------------------------------------------------------------------------
-
 $line-height: 1.4;
 $heading-font: 'Roboto', Helvetica, Arial, sans-serif;
 $body-font: 'Roboto', Helvetica, Arial, sans-serif;
 
-html, body {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
-  height: 100%; 
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 html {
-  font-size: 100%;
-  box-sizing: border-box;
+    font-size: 100%;
+    box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 @mixin heading-font {
-  font-family: Arial, sans-serif;
-  .fonts-loaded & {
-    font-family: $heading-font;
-  }
+    font-family: Arial, sans-serif;
+
+    .fonts-loaded & {
+        font-family: $heading-font;
+    }
 }
 
 @mixin body-font {
-  font-family: Arial, sans-serif;
-  .fonts-loaded & {
-    font-family: $body-font;
-  }  
+    font-family: Arial, sans-serif;
+
+    .fonts-loaded & {
+        font-family: $body-font;
+    }
 }
 
 body {
-  @include body-font;
-  line-height: $line-height;
-  color: $body-color;
-}
-
-
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-Thin.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-Thin.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-Thin.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-Thin.svg#Roboto-Thin') format('svg');
-  font-weight: 100;
-  font-style: normal;
+    @include body-font;
+    line-height: $line-height;
+    color: $body-color;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-Medium.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-Medium.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-Medium.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-Medium.svg#Roboto-Medium') format('svg');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-Thin.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-Thin.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-Thin.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-Thin.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-Thin.svg#Roboto-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-Regular.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-Regular.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-Regular.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-Regular.svg#Roboto-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-Medium.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-Medium.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-Medium.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-Medium.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-Medium.svg#Roboto-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-MediumItalic.svg#Roboto-MediumItalic') format('svg');
-  font-weight: 500;
-  font-style: italic;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-Regular.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-Regular.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-Regular.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-Regular.svg#Roboto-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-ThinItalic.svg#Roboto-ThinItalic') format('svg');
-  font-weight: 100;
-  font-style: italic;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-MediumItalic.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-MediumItalic.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-MediumItalic.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-MediumItalic.svg#Roboto-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot');
-  src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/hinted-subset-Roboto-Italic.woff2') format('woff2'),
-    url('/assets/fonts/hinted-subset-Roboto-Italic.woff') format('woff'),
-    url('/assets/fonts/hinted-subset-Roboto-Italic.ttf') format('truetype'),
-    url('/assets/fonts/hinted-subset-Roboto-Italic.svg#Roboto-Italic') format('svg');
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-ThinItalic.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-ThinItalic.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-ThinItalic.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-ThinItalic.svg#Roboto-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot');
+    src: url('/assets/fonts/hinted-subset-Roboto-Italic.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/hinted-subset-Roboto-Italic.woff2') format('woff2'), url('/assets/fonts/hinted-subset-Roboto-Italic.woff') format('woff'), url('/assets/fonts/hinted-subset-Roboto-Italic.ttf') format('truetype'), url('/assets/fonts/hinted-subset-Roboto-Italic.svg#Roboto-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
 }
 
 /* 
@@ -122,14 +100,14 @@ body {
  * http://www.modularscale.com/?1.25&em&1.2
 */
 $type-scale: (
-  h1: 3.732rem,
-  h2: 3.11rem,
-  h3: 2.592rem,
-  h4: 2.16rem,
-  h5: 1.8rem,
-  h6: 1.5rem,
-  p: 1.25rem,
-  small: 1.042rem
+    h1: 3.732rem,
+    h2: 3.11rem,
+    h3: 2.592rem,
+    h4: 2.16rem,
+    h5: 1.8rem,
+    h6: 1.5rem,
+    p: 1.25rem,
+    small: 1.042rem
 );
 
 /* 
@@ -137,14 +115,14 @@ $type-scale: (
  * http://www.modularscale.com/?1.15&em&1.19
 */
 $type-scale-tablet: (
-  h1: 3.266rem,
-  h2: 2.744rem,
-  h3: 2.306rem,
-  h4: 1.938rem,
-  h5: 1.626rem,
-  h6: 1.368rem,
-  p: 1.15rem,
-  small: 1rem
+    h1: 3.266rem,
+    h2: 2.744rem,
+    h3: 2.306rem,
+    h4: 1.938rem,
+    h5: 1.626rem,
+    h6: 1.368rem,
+    p: 1.15rem,
+    small: 1rem
 );
 
 /* 
@@ -152,84 +130,92 @@ $type-scale-tablet: (
  * http://www.modularscale.com/?1.1&em&1.25&web&text
 */
 $type-scale-mobile: (
-  h1: 2.475rem,
-  h2: 2.152rem,
-  h3: 1.871rem,
-  h4: 1.627rem,
-  h5: 1.415rem,
-  h6: 1.231rem,
-  p: 1.07rem,
-  small: 0.95rem
+    h1: 2.475rem,
+    h2: 2.152rem,
+    h3: 1.871rem,
+    h4: 1.627rem,
+    h5: 1.415rem,
+    h6: 1.231rem,
+    p: 1.07rem,
+    small: 0.95rem
 );
-
-
 $breakpoint-tablet: 65em;
 $breakpoint-mobile: 35em;
 $whitespace: $line-height * map-get($type-scale, p);
 
 @mixin size($level) {
-  font-size: map-get($type-scale, $level);
-  @media (max-width: $breakpoint-tablet) {
-     font-size: map-get($type-scale-tablet, $level);
-  }
-  @media (max-width: $breakpoint-mobile) {
-     font-size: map-get($type-scale-mobile, $level);
-  }
+    font-size: map-get($type-scale, $level);
+
+    @media (max-width: $breakpoint-tablet) {
+        font-size: map-get($type-scale-tablet, $level);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        font-size: map-get($type-scale-mobile, $level);
+    }
 }
 
 @mixin margin-bottom($level) {
-  margin-bottom: $line-height * map-get($type-scale, p) * $level;
-  @media (max-width: $breakpoint-tablet) {
-     margin-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
-  }
-  @media (max-width: $breakpoint-mobile) {
-     margin-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
-  }
+    margin-bottom: $line-height * map-get($type-scale, p) * $level;
+
+    @media (max-width: $breakpoint-tablet) {
+        margin-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+    }
 }
 
 @mixin margin-top($level) {
-  margin-top: $line-height * map-get($type-scale, p) * $level;
-  @media (max-width: $breakpoint-tablet) {
-     margin-top: $line-height * map-get($type-scale-tablet, p) * $level;
-  }
-  @media (max-width: $breakpoint-mobile) {
-     margin-top: $line-height * map-get($type-scale-mobile, p) * $level;
-  }
+    margin-top: $line-height * map-get($type-scale, p) * $level;
+
+    @media (max-width: $breakpoint-tablet) {
+        margin-top: $line-height * map-get($type-scale-tablet, p) * $level;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-top: $line-height * map-get($type-scale-mobile, p) * $level;
+    }
 }
 
 @mixin padding-bottom($level) {
-  padding-bottom: $line-height * map-get($type-scale, p) * $level;
-  @media (max-width: $breakpoint-tablet) {
-     padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
-  }
-  @media (max-width: $breakpoint-mobile) {
-     padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
-  }
+    padding-bottom: $line-height * map-get($type-scale, p) * $level;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+    }
 }
 
 @mixin padding-top($level) {
-  padding-top: $line-height * map-get($type-scale, p) * $level;
-  @media (max-width: $breakpoint-tablet) {
-     padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
-  }
-  @media (max-width: $breakpoint-mobile) {
-     padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
-  }
+    padding-top: $line-height * map-get($type-scale, p) * $level;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
+    }
 }
 
 ol,
 ul {
-  padding-left: 1.4rem;
+    padding-left: 1.4rem;
 }
 
 @mixin container($width: 48rem, $padding: 0.25rem) {
-  margin: auto;
-  max-width: $width;
-  padding-left: $padding;
-  padding-right: $padding;
+    margin: auto;
+    max-width: $width;
+    padding-left: $padding;
+    padding-right: $padding;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }

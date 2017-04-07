@@ -1,10 +1,9 @@
-@charset 'UTF-8';
+@charset 'utf-8';
 
 // Base
-@import
-  'base/reeeset',
-  'base/color',
-  'base/typography';
+@import 'base/reeeset',
+    'base/color',
+    'base/typography';
 
 // Modules
 @import 'modules/**/*.scss';

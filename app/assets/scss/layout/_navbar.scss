@@ -1,17 +1,18 @@
 .global__nav {
-  @include margin-bottom(2);
-  background-color: color($theme-color, 800);
-  height: 5rem;
-  position: relative;
-  
+    @include margin-bottom(2);
+    background-color: color($theme-color, 800);
+    height: 5rem;
+    position: relative;
+
     .title {
         @include size(h5);
         @include center;
         font-weight: 600;
         color: color($theme-color, 200);
+
         &:hover {
-          color: color($theme-color, 300);
-          transition: all 0.3s ease;
+            color: color($theme-color, 300);
+            transition: all 0.3s ease;
         }
     }
 }

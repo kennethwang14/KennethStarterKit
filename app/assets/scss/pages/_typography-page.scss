@@ -1,67 +1,88 @@
 .test__container {
-  @include container(65rem);
-  
-  .title {
-    @include size(h1);
-    @include margin-bottom(1);
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    
-    span {
-      @include link-underline(white, color($theme-color, 900), 93%, 5px);
+    @include container(65rem);
+
+    .title {
+        @include size(h1);
+        @include margin-bottom(1);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            @include link-underline(white, color($theme-color, 100), 93%, 5px);
+        }
     }
-  }
-  
-  .h1 { @include size(h1) }
-  .h2 { @include size(h2) }
-  .h3 { @include size(h3) }
-  .h4 { @include size(h4) }
-  .h5 { @include size(h5) }
-  .h6 { @include size(h6) }
-  .p { @include size(p) }
-  
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6,
-  .p {
-    @include padding-bottom(1);
-    @include padding-top(1);
-    line-height: 1.1;
-    border-bottom: 1px solid color($grey, 300);
-    text-align: center;
-    display: block;
-  }
-  
-  .button-container {
-    @include margin-top(2);
-    @include margin-bottom(2);
-    display: block;
-    text-align: center;
-  }
-  
+
+    .h1 {
+        @include size(h1);
+    }
+
+    .h2 {
+        @include size(h2);
+    }
+
+    .h3 {
+        @include size(h3);
+    }
+
+    .h4 {
+        @include size(h4);
+    }
+
+    .h5 {
+        @include size(h5);
+    }
+
+    .h6 {
+        @include size(h6);
+    }
+
+    .p {
+        @include size(p);
+    }
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6,
+    .p {
+        @include padding-bottom(1);
+        @include padding-top(1);
+        line-height: 1.1;
+        border-bottom: 1px solid color($grey, 300);
+        text-align: center;
+        display: block;
+    }
+
+    .button-container {
+        @include margin-top(2);
+        @include margin-bottom(2);
+        display: block;
+        text-align: center;
+    }
+
     button {
-      @include size(h6);
-      @include material-depth(1);
-      text-align: center;
+        @include size(h6);
+        @include material-depth(1);
+        text-align: center;
     }
-      
-      .bg {
+
+    .bg {
         @include button-bg(color($theme-color));
-        color: white;
+        color: #fff;
         margin-right: 0.5rem;
+
         @media (max-width: $breakpoint-mobile) {
-          display: block;
-          margin: auto;
-          @include margin-bottom(1);
-       }
-      }
-      
-      .lite {
+            display: block;
+            margin: auto;
+            @include margin-bottom(1);
+        }
+    }
+
+    .lite {
         @include button-lite(color($theme-color));
         color: color($theme-color);
-      }
+    }
 }

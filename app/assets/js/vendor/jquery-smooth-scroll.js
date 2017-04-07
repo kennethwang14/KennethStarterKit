@@ -309,5 +309,3 @@
   $.fn.smoothScroll.defaults = defaults;
 
 }));
-
-$('a').smoothScroll({offset: -25});
