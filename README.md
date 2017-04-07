@@ -1,6 +1,6 @@
 # kenneth-starter-kit
 
-A Gulp-powered starter kit that I use for my frontend web projects. It contains everything you need for a HTML/CSS/JS multi-page website. For SPAs or JavaScript-based web apps, I would recommend [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit) instead.
+A Gulp-powered starter kit that I use for my frontend web projects. It contains everything you need for a HTML/CSS/JS multi-page website. For SPAs, API driven apps, or complex JavaScript web apps, I would recommend a WebPack powered starter kit such as [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit) instead.
 
 ## Installation
 
